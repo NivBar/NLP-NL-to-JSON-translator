@@ -1,5 +1,5 @@
 
-# Healthcare LLM JSON Translator & Evaluation Suite
+# Healthcare LLM JSON Translator
 
 This project provides a complete pipeline for translating natural language healthcare queries into structured JSON requests using large language models (LLMs). It also includes a robust evaluation and visualization framework to assess the accuracy of the generated outputs.
 
