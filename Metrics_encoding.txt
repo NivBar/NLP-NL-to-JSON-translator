@@ -1,0 +1,12 @@
+{
+    'PSS (Patient Satisfaction Score)': 45,
+    'ADM (Average Daily Medications Administered)': 49,
+    'ADC (Average Daily Consultations)': 47,
+    'SSR (Successful Surgery Rate)': 50,
+    'ADD (Average Daily Discharges)': 51,
+    'IPR (Infection Prevention Rate)': 48,
+    'ADA (Average Daily Admissions)': 46,
+    'MER (Medication Error Rate)': 12,
+    'ADS (Average Daily Surgeries)': 52,
+    'PRR (Patient Recovery Rate)': 165
+}

@@ -1,0 +1,289 @@
+user_input,expected_output,granite328,llama318,mixtral8x7,llama3370
+Show me the hospital with the highest patient satisfaction score.,"
+        {
+            ""metrics"": [45],
+            ""scope"": ""hospital"",
+            ""scopeIds"": [""HOSP123""],
+            ""year"": 2023,
+            ""for"": ""treatment"",
+            ""forId"": ""satisfaction"",
+            ""sortBy"": ""leader"",
+            ""top"": 1
+        }
+        ","{'metrics': [45], 'scope': 'hospital', 'for': 'patient', 'sortBy': 'leader'}","{'metrics': [45], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}","{'metrics': [45], 'scope': 'hospital', 'for': 'patient', 'sortBy': 'leader'}","{'metrics': [45], 'scope': 'hospital', 'for': 'patient', 'scopeIds': ['001'], 'year': 2023, 'vs': True, 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}"
+List all clinics with at least 20 medications administered daily on average.,"
+        {
+            ""metrics"": [49],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADM"",
+                    ""filterType"": ""above or equal"",
+                    ""value"": 20
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [49], 'scope': 'clinic', 'for': 'treatment', 'filters': [{'metric': 'adm', 'filterType': 'above', 'value': 20}]}","{'metrics': [49], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'vs': False, 'top': 0, 'filters': [{'metric': 'adm', 'filterType': 'above', 'value': 20}]}","{'metrics': [49], 'scope': 'clinic', 'year': 2023, 'for': 'clinic', 'filters': [{'metric': 'adm', 'filterType': 'above or equal', 'value': 20}]}","{'metrics': [49], 'scope': 'clinic', 'filters': [{'metric': 'adm', 'filterType': 'above or equal', 'value': 20}]}"
+Show all hospitals with more than 100 consultations daily on average.,"
+        {
+            ""metrics"": [47],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADC"",
+                    ""filterType"": ""above"",
+                    ""value"": 100
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [47], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 100}]}","{'metrics': [47], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['hospital'], 'filters': [{'metric': 'adc (average daily consultations)', 'filterType': 'above', 'value': 100}]}","{'metrics': [47], 'scope': 'hospital', 'scopeIds': ['*'], 'for': 'hospital', 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 100}]}","{'metrics': [47], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 100}]}"
+Which hospital has the highest successful surgery rate?,"
+        {
+            ""metrics"": [50],
+            ""scope"": ""hospital"",
+            ""scopeIds"": [""HOSP456""],
+            ""year"": 2023,
+            ""for"": ""treatment"",
+            ""forId"": ""surgery"",
+            ""sortBy"": ""leader"",
+            ""top"": 1
+        }
+        ","{'metrics': [50], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'treatment', 'forId': '001', 'sortBy': 'leader', 'top': 1}","{'metrics': [50], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}","{'metrics': [50], 'scope': 'hospital', 'for': 'hospital', 'sortBy': 'leader'}","{'metrics': [50], 'scope': 'hospital', 'for': 'treatment', 'vs': True, 'sortBy': 'descending', 'top': 1}"
+Show me clinics with an average of at least 10 discharges daily.,"
+        {
+            ""metrics"": [51],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADD"",
+                    ""filterType"": ""above or equal"",
+                    ""value"": 10
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [51], 'scope': 'clinic', 'for': 'patient', 'filters': [{'metric': 'add', 'filterType': 'above or equal', 'value': 10}]}","{'metrics': [51], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'forId': '001', 'vs': False, 'sortBy': 'ascending', 'top': 0, 'filters': [{'metric': 'add (average daily discharges)', 'filterType': 'above or equal', 'value': 10}]}","{'metrics': [51], 'scope': 'clinic', 'year': 2023, 'for': 'clinic', 'vs': False, 'top': 0, 'filters': [{'metric': 'add', 'filterType': 'above or equal', 'value': 10}]}","{""metrics"": [51], ""scope"": ""clinic"", ""for"": ""patient"", ""filters"": [{""metric"": ""add"", ""filterType"": ""above or equal"", ""value"": 10}]}"
+List all hospitals with an infection prevention rate above 95%.,"
+        {
+            ""metrics"": [48],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""IPR"",
+                    ""filterType"": ""above"",
+                    ""value"": 95
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [48], 'scope': 'hospital', 'scopeIds': ['001'], 'for': 'hospital', 'vs': False, 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 0, 'filters': [{'metric': 'ipr', 'filterType': 'above', 'value': 95}]}","{'metrics': [48], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 0, 'filters': [{'metric': 'ipr (infection prevention rate)', 'filterType': 'above', 'value': 95}]}","{'metrics': [48], 'scope': 'hospital', 'for': 'hospital', 'filters': [{'metric': 'ipr', 'filterType': 'above or equal', 'value': 95}]}","{'metrics': [48], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'ipr', 'filterType': 'above', 'value': 95}]}"
+Find all clinics with a daily admission rate above 50 patients.,"
+        {
+            ""metrics"": [46],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADA"",
+                    ""filterType"": ""above"",
+                    ""value"": 50
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [12], 'scope': 'clinic', 'for': 'patient', 'filters': [{'metric': 'ada', 'filterType': 'above', 'value': 50}]}","{'metrics': [46], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'vs': False, 'sortBy': 'ascending', 'top': 0, 'filters': [{'metric': 'ada', 'filterType': 'above', 'value': 50}]}","{""metrics"": [46], ""scope"": ""clinic"", ""filterType"": ""above"", ""value"": 50}","{'metrics': [46], 'scope': 'clinic', 'for': 'patient', 'filters': [{'metric': 'ada', 'filterType': 'above', 'value': 50}]}"
+Which hospitals have the lowest medication error rates?,"
+        {
+            ""metrics"": [12],
+            ""scope"": ""hospital"",
+            ""sortBy"": ""leader"",
+            ""top"": 5,
+            ""for"": ""treatment"",
+            ""forId"": ""medication""
+        }
+        ","{'metrics': [12], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'sortBy': 'descending', 'top': 5}","{'metrics': [12], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 10, 'filters': [{'metric': 'mer (medication error rate)', 'filterType': 'below', 'value': 0.05}]}","{'metrics': [12], 'scope': 'hospital', 'for': 'hospital', 'vs': False, 'groupBy': ['hospital'], 'sortBy': 'ascending', 'top': 0}","{'metrics': [12], 'scope': 'hospital', 'for': 'patient', 'vs': True, 'sortBy': 'descending', 'top': 0}"
+List hospitals with an average of more than 30 surgeries daily.,"
+        {
+            ""metrics"": [52],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADS"",
+                    ""filterType"": ""above"",
+                    ""value"": 30
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [52], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'descending', 'top': 10}","{'metrics': [52], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['hospital'], 'sortBy': 'descending', 'top': 10, 'filters': [{'metric': 'ads (average daily surgeries)', 'filterType': 'above', 'value': 30}]}","{'metrics': [52], 'scope': 'hospital', 'for': 'hospital', 'groupBy': ['hospital'], 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 30}]}","{'metrics': [52], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 30}]}"
+Show clinics with a patient recovery rate of 80% or higher.,"
+        {
+            ""metrics"": [165],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""PRR"",
+                    ""filterType"": ""above or equal"",
+                    ""value"": 80
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [165], 'scope': 'clinic', 'for': 'patient', 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 0.8}]}","{'metrics': [165], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'vs': False, 'sortBy': 'ascending', 'top': 0, 'filters': [{'metric': 'prr (patient recovery rate)', 'filterType': 'above or equal', 'value': 80}]}","{'metrics': [165], 'scope': 'clinic', 'for': 'clinic', 'vs': False, 'top': 0, 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 80}]}","{'metrics': [165], 'scope': 'clinic', 'for': 'patient', 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 80}]}"
+Find the hospital with the highest patient satisfaction score in 2022.,"
+        {
+            ""metrics"": [45],
+            ""scope"": ""hospital"",
+            ""scopeIds"": [""HOSP789""],
+            ""year"": 2022,
+            ""for"": ""treatment"",
+            ""forId"": ""satisfaction"",
+            ""sortBy"": ""leader"",
+            ""top"": 1
+        }
+        ","{'metrics': [45], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'patient', 'sortBy': 'leader', 'top': 1}","{'metrics': [45], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'patient', 'forId': '001', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}","{'metrics': [45], 'scope': 'hospital', 'year': 2022, 'for': 'hospital', 'sortBy': 'leader', 'top': 1}","{'metrics': [45], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'patient', 'vs': True, 'groupBy': ['hospital'], 'sortBy': 'descending', 'top': 1}"
+Show me the clinics with the best infection prevention rates.,"
+        {
+            ""metrics"": [48],
+            ""scope"": ""clinic"",
+            ""sortBy"": ""leader"",
+            ""top"": 3,
+            ""for"": ""treatment"",
+            ""forId"": ""prevention""
+        }
+        ","{'metrics': [48], 'scope': 'clinic', 'for': 'staff', 'sortBy': 'descending', 'top': 5}","{'metrics': [48], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['clinic'], 'sortBy': 'leader', 'top': 10}","{'metrics': [48], 'scope': 'clinic', 'for': 'clinic', 'sortBy': 'leader', 'groupBy': ['clinic']}","{'metrics': [48], 'scope': 'clinic', 'for': 'patient', 'vs': True, 'sortBy': 'leader', 'top': 10, 'year': 2023, 'scopeIds': ['001']}"
+Which clinics have the highest average daily admissions?,"
+        {
+            ""metrics"": [46],
+            ""scope"": ""clinic"",
+            ""sortBy"": ""leader"",
+            ""top"": 5,
+            ""for"": ""patient"",
+            ""forId"": ""admissions""
+        }
+        ","{'metrics': [46], 'scope': 'clinic', 'for': 'patient', 'groupBy': ['clinic'], 'sortBy': 'leader'}","{'metrics': [46], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['clinic'], 'sortBy': 'leader', 'top': 10}","{'metrics': [46], 'scope': 'clinic', 'for': 'clinic', 'sortBy': 'leader', 'top': 10}","{'metrics': [46], 'scope': 'clinic', 'for': 'patient', 'groupBy': ['clinic'], 'sortBy': 'descending', 'top': 10}"
+Show hospitals with a patient recovery rate of 90% or higher in 2023.,"
+        {
+            ""metrics"": [165],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""PRR"",
+                    ""filterType"": ""above or equal"",
+                    ""value"": 90
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [165], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 0.9}]}","{'metrics': [165], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'vs': False, 'sortBy': 'leader', 'top': 0, 'filters': [{'metric': 'prr (patient recovery rate)', 'filterType': 'above or equal', 'value': 90}]}","{'metrics': [165], 'scope': 'hospital', 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 90}]}","{'metrics': [165], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'filters': [{'metric': 'prr', 'filterType': 'above or equal', 'value': 90}]}"
+List all hospitals with a medication error rate below 5%.,"
+        {
+            ""metrics"": [12],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""MER"",
+                    ""filterType"": ""below"",
+                    ""value"": 5
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [12], 'scope': 'hospital', 'scopeIds': ['001'], 'for': 'staff', 'vs': False, 'filters': [{'metric': 'mer', 'filterType': 'below', 'value': 5}]}","{'metrics': [12], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 0, 'filters': [{'metric': 'mer (medication error rate)', 'filterType': 'below', 'value': 5}]}","{'metrics': [12], 'scope': 'hospital', 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'mer', 'filterType': 'below or equal', 'value': 5}]}","{'metrics': [12], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'filters': [{'metric': 'mer', 'filterType': 'below', 'value': 5}]}"
+Which clinics performed the most surgeries in 2023?,"
+        {
+            ""metrics"": [52],
+            ""scope"": ""clinic"",
+            ""sortBy"": ""leader"",
+            ""top"": 3,
+            ""for"": ""treatment"",
+            ""forId"": ""surgery""
+        }
+        ","{'metrics': [52], 'scope': 'clinic', 'for': 'treatment', 'sortBy': 'descending', 'top': 5}","{'metrics': [52], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['clinic'], 'sortBy': 'descending', 'top': 10}","{'metrics': [52], 'scope': 'clinic', 'year': 2023, 'for': 'clinic', 'sortBy': 'leader', 'top': 10}","{'metrics': [52], 'scope': 'clinic', 'year': 2023, 'for': 'treatment', 'vs': True, 'groupBy': ['clinic'], 'sortBy': 'descending', 'top': 10}"
+Find hospitals with a daily average of more than 5 successful surgeries.,"
+        {
+            ""metrics"": [50],
+            ""scope"": ""hospital"",
+            ""filters"": [
+                {
+                    ""metric"": ""SSR"",
+                    ""filterType"": ""above"",
+                    ""value"": 5
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [50], 'scope': 'hospital', 'for': 'hospital', 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 5}]}","{'metrics': [50], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'forId': '001', 'vs': False, 'sortBy': 'leader', 'top': 0, 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 5}]}","{'metrics': [50], 'scope': 'hospital', 'for': 'hospital', 'vs': False, 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 5}]}","{'metrics': [52], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'treatment', 'vs': False, 'top': 0, 'filters': [{'metric': 'ads', 'filterType': 'above', 'value': 5}]}"
+Show clinics with more than 200 daily consultations on average.,"
+        {
+            ""metrics"": [47],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""ADC"",
+                    ""filterType"": ""above"",
+                    ""value"": 200
+                }
+            ],
+            ""for"": ""patient"",
+            ""year"": 2023
+        }
+        ","{'metrics': [47], 'scope': 'clinic', 'for': 'clinic', 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 200}]}","{'metrics': [47], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['year', 'clinic'], 'sortBy': 'ascending', 'top': 10, 'filters': [{'metric': 'adc (average daily consultations)', 'filterType': 'above', 'value': 200}]}","{'metrics': [47], 'scope': 'clinic', 'for': 'clinic', 'year': 2023, 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 200}]}","{'metrics': [47], 'scope': 'clinic', 'filters': [{'metric': 'adc', 'filterType': 'above', 'value': 200}], 'for': 'clinic'}"
+Find the hospital with the highest average daily discharges.,"
+        {
+            ""metrics"": [51],
+            ""scope"": ""hospital"",
+            ""sortBy"": ""leader"",
+            ""top"": 1,
+            ""for"": ""patient"",
+            ""forId"": ""discharges""
+        }
+        ","{'metrics': [51], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'patient', 'sortBy': 'leader', 'top': 1}","{'metrics': [51], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2023, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}","{'metrics': [51], 'scope': 'hospital', 'for': 'hospital', 'sortBy': 'leader'}","{'metrics': [51], 'scope': 'hospital', 'for': 'patient', 'groupBy': ['hospital'], 'sortBy': 'descending', 'top': 1}"
+Which hospital had the most daily admissions in 2022?,"
+        {
+            ""metrics"": [46],
+            ""scope"": ""hospital"",
+            ""year"": 2022,
+            ""sortBy"": ""leader"",
+            ""top"": 1,
+            ""for"": ""patient"",
+            ""forId"": ""admissions""
+        }
+        ","{'metrics': [46], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'patient', 'groupBy': ['year'], 'sortBy': 'leader', 'top': 1}","{'metrics': [46], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'hospital', 'groupBy': ['hospital'], 'sortBy': 'leader', 'top': 1}","{'metrics': [46], 'scope': 'hospital', 'year': 2022, 'for': 'hospital', 'groupBy': ['year'], 'sortBy': 'descending', 'top': 1}","{'metrics': [46], 'scope': 'hospital', 'scopeIds': ['001'], 'year': 2022, 'for': 'patient', 'vs': True, 'groupBy': ['hospital'], 'sortBy': 'descending', 'top': 1}"
+Show me the clinic with the lowest medication error rate in 2023.,"
+        {
+            ""metrics"": [12],
+            ""scope"": ""clinic"",
+            ""year"": 2023,
+            ""sortBy"": ""leader"",
+            ""top"": 1,
+            ""for"": ""treatment"",
+            ""forId"": ""medication""
+        }
+        ","{'metrics': [12], 'scope': 'clinic', 'for': 'staff', 'vs': False, 'groupBy': ['year'], 'sortBy': 'leader', 'top': 1}","{'metrics': [12], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'groupBy': ['clinic'], 'sortBy': 'leader', 'top': 1}","{'metrics': [12], 'scope': 'clinic', 'year': 2023, 'for': 'clinic', 'sortBy': 'ascending', 'top': 1}","{'metrics': [12], 'scope': 'clinic', 'year': 2023, 'for': 'treatment', 'vs': True, 'sortBy': 'descending', 'top': 1}"
+Find clinics with a successful surgery rate above 80%.,"
+        {
+            ""metrics"": [50],
+            ""scope"": ""clinic"",
+            ""filters"": [
+                {
+                    ""metric"": ""SSR"",
+                    ""filterType"": ""above"",
+                    ""value"": 80
+                }
+            ],
+            ""for"": ""treatment"",
+            ""year"": 2023
+        }
+        ","{'metrics': [50], 'scope': 'clinic', 'for': 'treatment', 'filters': [{'metric': 'ssr', 'filterType': 'above', 'value': 0.8}]}","{'metrics': [50], 'scope': 'clinic', 'scopeIds': ['001'], 'year': 2023, 'for': 'staff', 'forId': '001', 'vs': False, 'sortBy': 'leader', 'top': 0}","{'metrics': [50], 'scope': 'clinic', 'for': 'clinic', 'filters': [{'metric': 'ssr', 'filterType': 'above', 'value': 80}]}","{'metrics': [50], 'scope': 'clinic', 'for': 'treatment', 'filters': [{'metric': 'ssr', 'filterType': 'above', 'value': 80}]}"

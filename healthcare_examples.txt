@@ -1,0 +1,353 @@
+user_input: Show me the hospital with the highest patient satisfaction score.
+expected_output: 
+        {
+            "metrics": [45],
+            "scope": "hospital",
+            "scopeIds": ["HOSP123"],
+            "year": 2023,
+            "for": "treatment",
+            "forId": "satisfaction",
+            "sortBy": "leader",
+            "top": 1
+        }
+        
+_______________
+
+user_input: List all clinics with at least 20 medications administered daily on average.
+expected_output: 
+        {
+            "metrics": [49],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "ADM",
+                    "filterType": "above or equal",
+                    "value": 20
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Show all hospitals with more than 100 consultations daily on average.
+expected_output: 
+        {
+            "metrics": [47],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "ADC",
+                    "filterType": "above",
+                    "value": 100
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Which hospital has the highest successful surgery rate?
+expected_output: 
+        {
+            "metrics": [50],
+            "scope": "hospital",
+            "scopeIds": ["HOSP456"],
+            "year": 2023,
+            "for": "treatment",
+            "forId": "surgery",
+            "sortBy": "leader",
+            "top": 1
+        }
+        
+_______________
+
+user_input: Show me clinics with an average of at least 10 discharges daily.
+expected_output: 
+        {
+            "metrics": [51],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "ADD",
+                    "filterType": "above or equal",
+                    "value": 10
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: List all hospitals with an infection prevention rate above 95%.
+expected_output: 
+        {
+            "metrics": [48],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "IPR",
+                    "filterType": "above",
+                    "value": 95
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Find all clinics with a daily admission rate above 50 patients.
+expected_output: 
+        {
+            "metrics": [46],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "ADA",
+                    "filterType": "above",
+                    "value": 50
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Which hospitals have the lowest medication error rates?
+expected_output: 
+        {
+            "metrics": [12],
+            "scope": "hospital",
+            "sortBy": "leader",
+            "top": 5,
+            "for": "treatment",
+            "forId": "medication"
+        }
+        
+_______________
+
+user_input: List hospitals with an average of more than 30 surgeries daily.
+expected_output: 
+        {
+            "metrics": [52],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "ADS",
+                    "filterType": "above",
+                    "value": 30
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Show clinics with a patient recovery rate of 80% or higher.
+expected_output: 
+        {
+            "metrics": [165],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "PRR",
+                    "filterType": "above or equal",
+                    "value": 80
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Find the hospital with the highest patient satisfaction score in 2022.
+expected_output: 
+        {
+            "metrics": [45],
+            "scope": "hospital",
+            "scopeIds": ["HOSP789"],
+            "year": 2022,
+            "for": "treatment",
+            "forId": "satisfaction",
+            "sortBy": "leader",
+            "top": 1
+        }
+        
+_______________
+
+user_input: Show me the clinics with the best infection prevention rates.
+expected_output: 
+        {
+            "metrics": [48],
+            "scope": "clinic",
+            "sortBy": "leader",
+            "top": 3,
+            "for": "treatment",
+            "forId": "prevention"
+        }
+        
+_______________
+
+user_input: Which clinics have the highest average daily admissions?
+expected_output: 
+        {
+            "metrics": [46],
+            "scope": "clinic",
+            "sortBy": "leader",
+            "top": 5,
+            "for": "patient",
+            "forId": "admissions"
+        }
+        
+_______________
+
+user_input: Show hospitals with a patient recovery rate of 90% or higher in 2023.
+expected_output: 
+        {
+            "metrics": [165],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "PRR",
+                    "filterType": "above or equal",
+                    "value": 90
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: List all hospitals with a medication error rate below 5%.
+expected_output: 
+        {
+            "metrics": [12],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "MER",
+                    "filterType": "below",
+                    "value": 5
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Which clinics performed the most surgeries in 2023?
+expected_output: 
+        {
+            "metrics": [52],
+            "scope": "clinic",
+            "sortBy": "leader",
+            "top": 3,
+            "for": "treatment",
+            "forId": "surgery"
+        }
+        
+_______________
+
+user_input: Find hospitals with a daily average of more than 5 successful surgeries.
+expected_output: 
+        {
+            "metrics": [50],
+            "scope": "hospital",
+            "filters": [
+                {
+                    "metric": "SSR",
+                    "filterType": "above",
+                    "value": 5
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Show clinics with more than 200 daily consultations on average.
+expected_output: 
+        {
+            "metrics": [47],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "ADC",
+                    "filterType": "above",
+                    "value": 200
+                }
+            ],
+            "for": "patient",
+            "year": 2023
+        }
+        
+_______________
+
+user_input: Find the hospital with the highest average daily discharges.
+expected_output: 
+        {
+            "metrics": [51],
+            "scope": "hospital",
+            "sortBy": "leader",
+            "top": 1,
+            "for": "patient",
+            "forId": "discharges"
+        }
+        
+_______________
+
+user_input: Which hospital had the most daily admissions in 2022?
+expected_output: 
+        {
+            "metrics": [46],
+            "scope": "hospital",
+            "year": 2022,
+            "sortBy": "leader",
+            "top": 1,
+            "for": "patient",
+            "forId": "admissions"
+        }
+        
+_______________
+
+user_input: Show me the clinic with the lowest medication error rate in 2023.
+expected_output: 
+        {
+            "metrics": [12],
+            "scope": "clinic",
+            "year": 2023,
+            "sortBy": "leader",
+            "top": 1,
+            "for": "treatment",
+            "forId": "medication"
+        }
+        
+_______________
+
+user_input: Find clinics with a successful surgery rate above 80%.
+expected_output: 
+        {
+            "metrics": [50],
+            "scope": "clinic",
+            "filters": [
+                {
+                    "metric": "SSR",
+                    "filterType": "above",
+                    "value": 80
+                }
+            ],
+            "for": "treatment",
+            "year": 2023
+        }
+        
+_______________

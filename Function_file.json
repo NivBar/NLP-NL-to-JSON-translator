@@ -1,0 +1,90 @@
+{
+    "type": "function",
+    "function": {
+        "name": "calculate_healthcare_stats",
+        "description": "Calculates various healthcare-related statistics for a specified metric, scope, and subject, with options for filtering and grouping results.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "metrics": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "A list of healthcare metric IDs to calculate. These could include patient outcomes, treatment effectiveness, hospital readmission rates, etc.",
+                    "minItems": 1
+                },
+                "scope": {
+                    "type": "string",
+                    "enum": ["hospital", "clinic", "region", "national"],
+                    "description": "Defines the geographical or organizational scope of the statistics. It can be a specific hospital, a group of clinics, a regional health authority, or national data."
+                },
+                "scopeIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IDs corresponding to the selected scope. For example, a specific hospital ID, clinic ID, or regional health authority code."
+                },
+                "year": {
+                    "type": "integer",
+                    "description": "The year for which the healthcare statistics should be calculated."
+                },
+                "for": {
+                    "type": "string",
+                    "enum": ["patient", "treatment", "staff"],
+                    "description": "Indicates the primary focus of the statistics, such as patient outcomes, effectiveness of treatments, or staff performance."
+                },
+                "forId": {
+                    "type": "string",
+                    "description": "An identifier for the specific subject of the calculations, such as a patient ID, a specific treatment protocol ID, or staff ID."
+                },
+                "vs": {
+                    "type": "boolean",
+                    "description": "When set to true, the function will calculate comparative statistics between the specified subject and a benchmark or control group."
+                },
+                "groupBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "enum": ["year", "hospital", "region", "clinic"],
+                    "description": "Determines how the results should be aggregated. For example, you might group results by year, by hospital, or by region to see trends over time or differences across facilities."
+                },
+                "sortBy": {
+                    "type": "string",
+                    "enum": ["leader", "ascending", "descending"],
+                    "description": "Specifies how to sort the results. For instance, you might want to sort by the leading hospitals in terms of patient satisfaction or treatment success rate."
+                },
+                "top": {
+                    "type": "integer",
+                    "description": "Returns the top X results based on the sorting criteria. Setting this to 0 will return all results."
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "metric": {
+                                "type": "string",
+                                "description": "The specific healthcare metric to apply the filter on, such as 'patient_age' or 'treatment_duration'."
+                            },
+                            "filterType": {
+                                "type": "string",
+                                "enum": ["below", "below or equal", "above", "above or equal", "equal", "not equal"],
+                                "description": "Specifies the type of filter to apply, for example, filtering by patients older than a certain age or treatments lasting longer than a certain duration."
+                            },
+                            "value": {
+                                "type": "number",
+                                "description": "The value to compare against using the specified filter type."
+                            }
+                        },
+                        "required": ["metric", "filterType", "value"]
+                    },
+                    "description": "A list of filters to apply to the healthcare metrics. This allows for more targeted analysis, such as focusing on high-risk patient groups or specific treatment outcomes."
+                }
+            },
+            "required": ["metrics", "for"]
+        }
+    }
+}
