@@ -40,3 +40,6 @@ The system includes the following components:
 - Output JSON is validated against the API schema.
 - Errors during model inference or formatting are handled and logged for transparency.
 
+## UI interface screenshot
+![Image](https://github.com/user-attachments/assets/6a60e468-bb02-4daf-9a67-4b236c6e506d)
+
