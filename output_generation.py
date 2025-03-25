@@ -135,7 +135,7 @@ for model_col in model_names:
         examples_df[model_col] = None
 
 # -----------------------------
-# Run All Models with Resume + Validation
+# Run All Models + Validation
 # -----------------------------
 
 for short_name, full_model_name in model_names.items():
